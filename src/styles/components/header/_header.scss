@@ -1,0 +1,58 @@
+
+
+header{
+  position: fixed;
+  top: rem(30);
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+
+  .header{
+    background: $white_blured;
+    box-shadow: 0 rem(-2) rem(3) 0 #EDEDED inset;
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap: rem(132);
+    border-radius: rem(16);
+    padding: rem(10) rem(28);
+    width: max-content;
+    align-items: center;
+
+    &__logo{
+      display: flex;
+      align-items: center;
+
+      &-image{
+        width: rem(217);
+        height: rem(22);
+      }
+    }
+
+    &__list{
+      display: flex;
+      gap: rem(60);
+
+      li{
+        font-size: rem(20);
+        font-weight: 400;
+        transition: all 0.4s ease-in-out;
+
+        a{
+          color: $black;
+
+        }
+        &:hover{
+          opacity: 0.5;
+
+        }
+      }
+    }
+
+    &__buttons{
+      display: flex;
+      gap: rem(28);
+    }
+  }
+}

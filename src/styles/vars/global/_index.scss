@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Manrope';
+  src: url('../../fonts/Manrope-VariableFont_wght.ttf');
+}
+
+$base-ff: 'Manrope', sans-serif;
+
+:root{
+  font-size: 0.833vw;
+}
+
+li{
+  list-style: none;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  font-size: rem(20);
+  font-family: $base-ff;
+}
+
