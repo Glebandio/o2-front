@@ -1,5 +1,64 @@
 @import "../../../function/function";
 
 
-.h1{
+.hero{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: rem(1300);
+  position: relative;
+  padding-top: rem(159);
+  gap: rem(32);
+
+  h1{
+    font-family: $second-ff;
+    font-weight: 250;
+    line-height: 90%;
+    font-size: rem(68);
+    text-align: center;
+
+    span{
+      font-weight: 500;
+    }
+  }
+
+  p{
+    font-family: $base-ff;
+    font-size: rem(20);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 140%;
+    text-align: center;
+
+    span{
+
+      font-weight: 600;
+      line-height: 140%;
+
+      .comma{
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__light{
+    border-radius: rem(1432);
+    background: rgba(0, 77, 255, 0.90);
+    width: rem(1432);
+    height: rem(129);
+    flex-shrink: 0;
+    filter: blur(175px);
+    position: absolute;
+    top: rem(820);
+  }
+
+  &__notebook{
+    width: rem(1098);
+    height: rem(628);
+    position: relative;
+    z-index: 100;
+    margin-top: rem(43);
+  }
 }
+
+

@@ -1,0 +1,189 @@
+
+
+.reviews{
+  background: $light_gray;
+  padding: rem(100) rem(0) rem(118);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  &__blur{
+    position: absolute;
+    border-radius: rem(1370);
+    opacity: 0.5;
+    background: var(--Blue, #004DFF);
+    filter: blur(150px);
+    width: rem(1370);
+    height: rem(400);
+    bottom: rem(179);
+  }
+
+  h2{
+    font-family: $second-ff;
+    font-size: rem(44);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  &__desc{
+    margin-top: rem(22);
+    font-family: $third-ff;
+    font-size: rem(20);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+
+    span{
+      font-weight: 600;
+    }
+  }
+
+  &__cards{
+    width: calc(100% - rem(280)) ;
+    overflow-y:  scroll;
+    padding-left: rem(240);
+    position: relative;
+    z-index: 160;
+    display: flex;
+    gap: rem(32);
+    margin-top: rem(62);
+    align-items: start;
+  }
+
+  &__card{
+    background: var(--Gradient, linear-gradient(86deg, #004DFF 21.33%, #A3BFFF 149.74%));
+    border-radius: rem(16);
+    //width: rem(628);
+    width: max-content;
+    padding: rem(32);
+    display: flex;
+    gap: rem(22);
+
+    &-info{
+      display: flex;
+      flex-direction: column;
+      gap: rem(77);
+      width: rem(202);
+    }
+
+    &-model{
+      width: 100%;
+      display: flex;
+      gap: rem(7);
+      flex-direction: column;
+
+      p{
+        font-family: $third-ff;
+        font-size: rem(16);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 22.4px */
+        letter-spacing: rem(-0.48);
+        color: $white;
+      }
+    }
+    &-name{
+      font-size: rem(20);
+      font-weight: 600;
+      white-space: wrap;
+      width: rem(202);
+      color: $white;
+      font-family: $third-ff;
+    }
+
+    &-results{
+      display: flex;
+      flex-direction: column;
+      gap: rem(22);
+    }
+
+    &-point{
+      display: flex;
+      flex-direction: column;
+      gap: rem(4);
+
+      &Name{
+        color: $white;
+        font-family: $third-ff;
+        font-size: rem(16);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: rem(-0.48);
+      }
+      &:first-child{
+      .reviews__card-result{
+        color: #D8FFD0;
+      }
+      }
+    }
+
+    &-result{
+      font-family: $second-ff;
+      font-size: rem(22);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      letter-spacing: rem(-0.66);
+      color: $white;
+
+
+    }
+
+    &-man{
+      background: $white;
+      padding: rem(22);
+      border-radius: rem(8);
+      //width: rem(340);
+      display: flex;
+      flex-direction: column;
+      gap: rem(72);
+    }
+
+    &-manInfo{
+      display: flex;
+      gap: rem(22);
+
+    }
+
+    &-about{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+      justify-content: center;
+    }
+
+    &-manName{
+      font-family: $third-ff;
+      font-size: rem(20);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      color: $black
+    }
+
+    &-start{
+      color: $gray;
+      font-family: $third-ff;
+      font-size: rem(16);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: rem(-0.48);
+    }
+
+    &-desc{
+      font-family: $third-ff;
+      font-size: rem(18);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      padding-bottom: rem(52);
+      width: rem(296);
+    }
+
+  }
+}

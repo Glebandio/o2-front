@@ -2,8 +2,20 @@
   font-family: 'Manrope';
   src: url('../../fonts/Manrope-VariableFont_wght.ttf');
 }
+@font-face {
+  font-family: 'Unbounded';
+  src: url('../../fonts/Unbounded-VariableFont_wght.ttf');
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../../fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+
 
 $base-ff: 'Manrope', sans-serif;
+$second-ff: 'Unbounded', sans-serif;
+$third-ff: 'Montserrat', sans-serif;
 
 :root{
   font-size: 0.833vw;
@@ -22,5 +34,20 @@ body{
   margin: 0;
   font-size: rem(20);
   font-family: $base-ff;
+}
+
+::-webkit-scrollbar { /* chrome based */
+  width: 0px;  /* ширина scrollbar'a */
+  background: transparent;  /* опционально */
+}
+
+.telegram__logo{
+  z-index: 800;
+  position: fixed;
+  bottom: rem(150);
+  right: rem(120);
+  width: rem(66);
+  height: rem(66);
+  cursor: pointer;
 }
 

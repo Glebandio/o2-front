@@ -1,0 +1,17 @@
+
+
+
+.button__primary{
+  width: 100%;
+  background: linear-gradient(83deg, #004DFF 18.72%, #A3BFFF 107.91%);
+  border-radius: rem(8);
+  padding: rem(20);
+  color: $white;
+  font-family: $third-ff;
+  font-size: rem(20);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 24px */
+  letter-spacing: rem(-0.6);
+  text-transform: uppercase;
+}

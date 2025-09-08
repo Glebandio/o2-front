@@ -1,0 +1,80 @@
+
+.models{
+  height: rem(880);
+  width: 100%;
+  background: $blue;
+  box-shadow: 0 4px 26px 0 rgba(0, 0, 0, 0.10);
+  position: relative;
+  &__blur{
+    border-radius: rem(1696);
+    background: rgba(255, 255, 255, 0.90);
+    filter: blur(175px);
+    width: rem(1696);
+    height: rem(498);
+    position: absolute;
+    top: rem(135);
+    left: rem(112);
+    right: rem(112);
+  }
+
+  &__column{
+    position: relative;
+    z-index: 100;
+    padding-top: rem(62);
+    gap: rem(62);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+      text-align: center;
+      font-family: $second-ff;
+      font-size: rem(44);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+      color: $white;
+    }
+  }
+
+  &__row{
+    display: flex;
+    gap: rem(35);
+
+  }
+
+  &__foot{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 150;
+    height: rem(350);
+    background: linear-gradient(180deg, rgba(0, 77, 255, 0.00) 0%, #004DFF 100%);
+  }
+
+  &__card{
+    width: rem(358);
+    height: rem(541);
+
+    &--middle{
+      width: rem(396);
+      height: rem(599);
+    }
+
+    &:first-child{
+      padding-top: rem(58);
+    }
+
+    &:last-child{
+      padding-top: rem(58);
+
+    }
+
+    img{
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
