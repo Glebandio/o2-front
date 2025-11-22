@@ -1,0 +1,96 @@
+.fa{
+  padding-top: rem(78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - rem(78));
+
+
+  .container_fa{
+    display: flex;
+    width: rem(400);
+    padding: rem(22);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(22);
+    border-radius: rem(16);
+    background: #FFF;
+
+    .title{
+      color: #000;
+      text-align: center;
+      font-family: $base-ff;
+      font-size: rem(20);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      align-self: stretch;
+
+    }
+
+    .subtitle{
+      align-self: stretch;
+      color: #000;
+      font-family: $base-ff;
+      font-size: rem(16);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%; /* 22.4px */
+      letter-spacing: rem(-0.48);
+    }
+
+    .authentification{
+      display: flex;
+      gap: rem(8);
+
+      input{
+        width: rem(39);
+        height: rem(39);
+        border-radius: rem(8);
+        background: #F7F8FA;
+        text-align: center;
+
+      }
+
+    }
+
+    .links_fa{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+
+      a{
+        color: #004DFF;
+        text-align: right;
+        font-family: $base-ff;
+        font-size: rem(14);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 16.8px */
+        letter-spacing: rem(-0.42);
+      }
+    }
+
+    .button_fa{
+      display: flex;
+      width: rem(356);
+      height: rem(46);
+      padding: rem(20);
+      justify-content: center;
+      align-items: center;
+      gap: rem(10);
+      border-radius: rem(8);
+      background: #F7F8FA;
+
+      color: #727272;
+      font-family: $base-ff;
+      font-size: rem(16);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 19.2px */
+      text-transform: capitalize;
+    }
+  }
+
+}

@@ -28,7 +28,7 @@
 
     h2{
       text-align: center;
-      font-family: $second-ff;
+      font-family: $base-ff;
       font-size: rem(44);
       font-style: normal;
       font-weight: 400;
@@ -57,9 +57,14 @@
     width: rem(358);
     height: rem(541);
 
-    &--middle{
+    &-middle{
       width: rem(396);
       height: rem(599);
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &:first-child{

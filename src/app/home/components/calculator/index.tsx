@@ -1,4 +1,6 @@
-
+import {ButtonPrimary} from "@/components/Buttons/ButtonPrimary";
+import { Line } from "@/components/Line";
+import Image from "next/image";
 
 
 export const Calculator = () => {
@@ -26,6 +28,97 @@ export const Calculator = () => {
                     </div>
                     <div className="calculator__input-model">
                         Выберите модель
+                    </div>
+                    <div className="calculator__input-select">
+                        <div className="calculator__select-cont">
+                            <div className="calculator__select-picked">
+                            Модель
+                            <p>1446_00VIT_MT_9_volsic1filter(MT1filtered)_BYBIT</p>
+                            </div>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 9L12 16L5 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                        </div>
+                        <div className="calculator__select-row">
+                            <div className="calculator__select-data">
+                                <div className="calculator__select-block">
+                                    <p>
+                                        <span>Прибыльных сделок</span>
+                                    </p>
+                                    <div className="calculator__select-score">
+                                        94,6%
+                                    </div>
+                                </div>
+                                <div className="calculator__select-block">
+                                    <p>
+                                        <span>Умность</span>
+                                    </p>
+                                    <div className="calculator__select-score">
+                                        74,6%
+                                    </div>
+                                </div>
+                                <div className="calculator__select-block">
+                                    <p>
+                                        <span>PnL в день (ед. %)</span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="24" height="24" rx="12" fill="#D9E5FF"/>
+                                            <path d="M12.0498 11V16M12 8H12.1V8.1H12V8Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+
+                                    </p>
+                                    <div className="calculator__select-score">
+                                        17,13
+                                    </div>
+                                </div>
+                                <div className="calculator__select-block">
+                                    <p>
+                                        <span>PnL на сделку (ед. %)</span>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <rect width="24" height="24" rx="12" fill="#D9E5FF"/>
+                                            <path d="M12.0498 11V16M12 8H12.1V8.1H12V8Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        </svg>
+                                    </p>
+                                    <div className="calculator__select-score">
+                                        0,92
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="calculator__select-graph">
+                                <Image width={337} height={217} src={'/images/calculator/graph.png'} alt={''}/>
+                            </div>
+                        </div>
+                        <ButtonPrimary text={'Рассчитать прибыль'} width={767}/>
+                    </div>
+
+                </div>
+                <div className="calculator__benefit">
+                    <p>Потенциальная прибыль</p>
+
+                    <div className="calculator__benefit-point">
+                        <p>
+                            За неделю, USDT
+                        </p>
+                        <p className='calculator__benefit-number'>
+                            24
+                        </p>
+                    </div>
+                    <Line/>
+                    <div className="calculator__benefit-point">
+                        <p>
+                            За месяц, USDT
+                        </p>
+                        <p className='calculator__benefit-number'>
+                            102,75
+                        </p>
+                    </div>
+                    <Line/>
+                    <div className="calculator__benefit-point">
+                        <p>
+                            За год, USDT
+                        </p>
+                        <p className='calculator__benefit-number'>
+                            1250
+                        </p>
                     </div>
 
                 </div>

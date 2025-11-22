@@ -1,0 +1,116 @@
+.auth{
+  padding-top: rem(78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - rem(78));
+
+  .container{
+    display: flex;
+    width: rem(400);
+    height: rem(311);
+    padding: rem(22);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(22);
+    border-radius: rem(16);
+    background: #FFF;
+
+    p{
+      color: #000;
+      text-align: center;
+      font-family: $base-ff;
+      font-size: rem(20);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      align-self: stretch;
+
+    }
+
+    .email{
+      display: flex;
+      padding: rem(15) rem(22) rem(14) rem(22);
+      align-items: center;
+      gap: rem(10);
+      align-self: stretch;
+      border-radius: rem(8);
+      background: #F7F8FA;
+      color: #737373;
+      font-family: $base-ff;
+      font-size: rem(14);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 16.8px */
+      letter-spacing: rem(-0.42);
+    }
+
+    .password_div{
+      display: flex;
+      justify-content: space-between;
+      padding: rem(15) rem(22) rem(14) rem(22);
+      align-items: center;
+      align-self: stretch;
+      border-radius: rem(8);
+      background: #F7F8FA;
+      width: rem(356);
+
+
+      .password{
+        background: #F7F8FA;
+        color: #737373;
+        font-family: $base-ff;
+        font-size: rem(14);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 16.8px */
+        letter-spacing: rem(-0.42);
+      }
+
+      img{
+        width: rem(22);
+        height: rem(18);
+        cursor: pointer;
+      }
+    }
+
+    .links{
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+
+      a{
+        color: #004DFF;
+        text-align: right;
+        font-family: $base-ff;
+        font-size: rem(14);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 16.8px */
+        letter-spacing: rem(-0.42);
+      }
+    }
+
+    button{
+      display: flex;
+      width: 100%;
+      height: rem(46);
+      padding: rem(20);
+      justify-content: center;
+      align-items: center;
+      gap: rem(10);
+      border-radius: rem(8);
+      background: var(--Linear, linear-gradient(86deg, #004DFF 21.33%, #A3BFFF 149.74%));
+
+      color: #FFF;
+      font-family: $base-ff;
+      font-size: rem(16);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%; /* 19.2px */
+      text-transform: capitalize;
+    }
+  }
+}

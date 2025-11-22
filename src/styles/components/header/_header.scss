@@ -42,7 +42,7 @@ header{
         transition: all 0.4s ease-in-out;
 
         a{
-          color: $black;
+          color: #000000FF;
 
         }
         &:hover{
@@ -57,4 +57,53 @@ header{
       gap: rem(28);
     }
   }
+}
+
+.header-auth{
+    display: flex;
+    padding: rem(20) rem(48);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(1);
+    background: #f7f8fa;
+    box-sizing: border-box;
+    top: 0;
+    border-bottom: rem(1) solid #C7C7C7;
+
+    .container{
+      display: flex;
+      align-items: center;
+      gap: rem(22);
+      align-self: stretch;
+      justify-content: space-between;
+
+      .logo{
+        width: rem(193);
+        height: rem(18);
+      }
+
+      .buttons{
+
+        .button_element{
+
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: rem(22);
+          align-self: stretch;
+
+          svg{
+            width: rem(42);
+            height: rem(42);
+          }
+        }
+      }
+
+
+    }
+
+
+
+
+
 }

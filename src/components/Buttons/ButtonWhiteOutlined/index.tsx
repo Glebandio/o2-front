@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 interface ButtonWhiteOutlinedProps {
@@ -7,9 +8,9 @@ interface ButtonWhiteOutlinedProps {
 export const ButtonWhiteOutlined = (props :ButtonWhiteOutlinedProps) => {
     return(
         <>
-            <button className={'button__white-outlined'}>
+            <Link href={'/registration'} className={'button__white-outlined'}>
                 {props.text}
-            </button>
+            </Link>
         </>
     )
 }

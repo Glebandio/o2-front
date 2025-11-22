@@ -1,0 +1,407 @@
+.demo_account{
+  display: flex;
+  justify-content: space-between;
+  padding-top: rem(96);
+  align-items: start;
+  padding-left: rem(20);
+  padding-right: rem(20);
+  gap: rem(20);
+
+  .demo_account_left_part{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80vh;
+  }
+
+
+  .demo_menu{
+    display: flex;
+    width: rem(262);
+    padding: rem(10);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(02);
+    border-radius: rem(16);
+    background: #FFF;
+
+    .menu_models{
+      display: flex;
+      padding: rem(15);
+      align-items: center;
+      gap: rem(21);
+      align-self: stretch;
+      border-radius: rem(08);
+
+      color: #000;
+      font-family: $base-ff;
+      font-size: rem(20);
+      font-style: normal;
+      font-weight: 300;
+      line-height: 120%; /* 24px */
+      letter-spacing: rem(-0.6);
+    }
+
+    .menu_sessions{
+      display: flex;
+      padding: rem(15);
+      align-items: center;
+      gap: rem(18);
+      align-self: stretch;
+      border-radius: rem(08);
+
+      color: #000;
+      font-family: $base-ff;
+      font-size: rem(20);
+      font-style: normal;
+      font-weight: 300;
+      line-height: 120%; /* 24px */
+      letter-spacing: rem(-0.6);
+    }
+
+    .menu_accounts{
+      display: flex;
+      padding: rem(15);
+      align-items: center;
+      gap: rem(19);
+      border-radius: rem(8);
+      align-self: stretch;
+      background: #D9E5FF;
+
+      color: #000;
+      font-family: $base-ff;
+      font-size: rem(20);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 24px */
+      letter-spacing: rem(-0.6);
+    }
+  }
+
+  .container_accounts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(22);
+    padding-top: rem(14);
+
+    .accounts_head{
+      display: flex;
+      gap: rem(20);
+    }
+
+    .accounts_title{
+      color: #000;
+      font-family: $base-ff;
+      font-size: rem(24);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 28.8px */
+    }
+
+
+    .balance{
+      display: inline-flex;
+      padding: rem(22);
+      align-items: center;
+      gap: rem(89);
+      border-radius: rem(16);
+      background: var(--Linear, linear-gradient(86deg, #004DFF 21.33%, #A3BFFF 149.74%));
+      width: rem(766);
+      height: rem(158);
+
+      .balance_left_part{
+        display: flex;
+        width: rem(151);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem(10);
+
+        .balance_left_part_title{
+          color: #FFF;
+          font-family: $base-ff;
+          font-size: rem(20);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%; /* 24px */
+          align-self: stretch;
+
+        }
+
+        .balance_left_part_count{
+          color: #FFF;
+          font-family: $base-ff;
+          font-size: rem(28);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 120%; /* 33.6px */
+          align-self: stretch;
+
+
+        }
+
+        .button_demo_account{
+          display: flex;
+          padding: rem(06) rem(10) rem(07) rem(10);
+          justify-content: center;
+          align-items: center;
+          gap: rem(10);
+          border-radius: rem(22);
+          background: #FFF;
+
+          color: #004DFF;
+          font-family: $base-ff;
+          font-size: rem(14);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 120%; /* 16.8px */
+          letter-spacing: rem(-0.42);
+          text-transform: uppercase;
+
+        }
+      }
+
+      .balance_right_part{
+        display: flex;
+        width: rem(460);
+        flex-direction: column;
+        gap: rem(39);
+        border-left: #FFFFFF rem(1) solid;
+        padding-left: rem(20);
+
+        .button_delete_demo{
+          display: flex;
+          justify-content: end;
+
+          .delete_demo_account{
+            color: #FFF;
+            font-family: $base-ff;
+            font-size: rem(18);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%; /* 21.6px */
+          }
+        }
+
+        .demo_number{
+          display: flex;
+          flex-direction: column;
+          gap: rem(10);
+
+          .account_number_title {
+            color: #FFF;
+            font-family: $base-ff;
+            font-size: rem(16);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%; /* 19.2px */
+            align-self: stretch;
+          }
+
+          .account_number {
+            color: #FFF;
+            font-family: $base-ff;
+            font-size: rem(14);
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%; /* 19.2px */
+            align-self: stretch;
+          }
+        }
+      }
+    }
+
+    .demo_account_buttons{
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+      align-items: flex-end;
+
+
+      .button_add_account{
+        width: rem(321);
+        height: rem(46);
+        padding: rem(13) rem(20) rem(14) rem(20);
+        display: flex;
+        gap: rem(10);
+        justify-content: center;
+        align-items: center;
+        border-radius: rem(8);
+        background: #FFF;
+        color: #000;
+        font-family: $base-ff;
+        font-size: rem(16);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 19.2px */
+        letter-spacing: rem(-0.48);
+
+      }
+
+      .button_connect_bybit{
+        display: flex;
+        gap: rem(10);
+        width: rem(321);
+        height: rem(46);
+        padding: rem(13) rem(20) rem(14) rem(20);
+        justify-content: center;
+        align-items: center;
+        border-radius: rem(8);
+        background: #FFF;
+        color: #000;
+        font-family: $base-ff;
+        font-size: rem(16);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 19.2px */
+        letter-spacing: rem(-0.48);
+
+      }
+
+      .button_connect_binance{
+        display: flex;
+        gap: rem(1);
+        width: rem(321);
+        height: rem(46);
+        padding: rem(13) rem(20) rem(14) rem(20);
+        justify-content: center;
+        align-items: center;
+        border-radius: rem(8);
+        background: #FFF;
+        color: #000;
+        font-family: $base-ff;
+        font-size: rem(16);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 19.2px */
+        letter-spacing: rem(-0.48);
+
+      }
+    }
+
+    .transfers{
+      display: flex;
+      justify-content: space-between;
+      padding-top: rem(8);
+
+      .transfers_story{
+        color: #000;
+        font-family: $base-ff;
+        font-size: rem(24);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 120%; /* 28.8px */
+      }
+
+      .drop_downs{
+        display: flex;
+        width: rem(321);
+        align-items: center;
+        gap: rem(10);
+
+        .button_month{
+          width: rem(87);
+          display: flex;
+          padding: rem(04) rem(10);
+          justify-content: center;
+          align-items: center;
+          gap: rem(10);
+          border-radius: rem(18);
+          background: var(--2, linear-gradient(86deg, #004DFF 21.33%, #A3BFFF 149.74%));
+          color: #FFF;
+          font-family: $base-ff;
+          font-size: rem(16);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 120%; /* 19.2px */
+          letter-spacing: rem(-0.48);
+        }
+
+        .button_demo{
+          width: rem(73);
+          display: flex;
+          padding: rem(04) rem(10);
+          justify-content: center;
+          align-items: center;
+          gap: rem(10);
+          border-radius: rem(18);
+          background: #FFF;
+          color: #000;
+          font-family: $base-ff;
+          font-size: rem(16);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%; /* 19.2px */
+          letter-spacing: rem(-0.48);
+
+        }
+
+        .button_transfers{
+          width: rem(138);
+          display: flex;
+          padding: rem(4) rem(10);
+          justify-content: center;
+          align-items: center;
+          gap: rem(10);
+          border-radius: rem(18);
+          background: #FFF;
+          color: #000;
+          font-family: $base-ff;
+          font-size: rem(16);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 120%; /* 19.2px */
+          letter-spacing: rem(-0.48);
+
+        }
+      }
+    }
+
+    .operation_div{
+      margin-left: rem(460);
+      display: flex;
+      color: #727272;
+      font-family: $base-ff;
+      font-size: rem(18);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; /* 21.6px */
+    }
+  }
+
+  .support_div{
+    .support{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: rem(16);
+
+      .support_title{
+        color: #000;
+        text-align: center;
+        font-family: $base-ff;
+        font-size: rem(16);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 19.2px */
+      }
+
+      .support_tg_div{
+        gap: rem(8);
+        display: flex;
+        //justify-content: space-between;
+
+        .support_tg{
+          color: #000;
+          text-align: center;
+          font-family: $base-ff;
+          font-size: rem(18);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 120%; /* 21.6px */
+          letter-spacing: rem(-0.54);
+        }
+      }
+    }
+  }
+}

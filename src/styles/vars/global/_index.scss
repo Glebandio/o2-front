@@ -11,6 +11,11 @@
   src: url('../../fonts/Montserrat-VariableFont_wght.ttf');
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 
 $base-ff: 'Manrope', sans-serif;
@@ -34,6 +39,13 @@ body{
   margin: 0;
   font-size: rem(20);
   font-family: $base-ff;
+  box-sizing: border-box;
+  background: #F7F8FA;
+
+}
+
+.frontpage{
+  height: rem(10550);
 }
 
 ::-webkit-scrollbar { /* chrome based */
@@ -49,5 +61,16 @@ body{
   width: rem(66);
   height: rem(66);
   cursor: pointer;
+}
+
+.line{
+  width: 100%;
+  height: rem(1);
+  background: $black;
+}
+
+input{
+  outline: none;
+  border: none;
 }
 

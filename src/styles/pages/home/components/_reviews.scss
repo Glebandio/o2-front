@@ -146,6 +146,11 @@
       display: flex;
       gap: rem(22);
 
+      img{
+        width: rem(90);
+        height: rem(90);
+      }
+
     }
 
     &-about{
