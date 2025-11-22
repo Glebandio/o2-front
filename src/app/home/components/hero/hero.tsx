@@ -5,8 +5,15 @@ import { ButtonPrimary } from "@/components/Buttons/ButtonPrimary";
 import Image from 'next/image';
 import axios from 'axios';
 
+
+interface Props {
+    head_text: string;
+    desc_text: string;
+    sec_text: string;
+}
+
 export const Hero = () => {
-    const [heroData, setHeroData] = useState(null);
+    const [heroData, setHeroData] = useState<Props>();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -23,7 +30,7 @@ export const Hero = () => {
                 setError(null);
             } catch (err) {
                 console.error('Error fetching hero data:', err);
-                setError('Ошибка при загрузке данных');
+                // setError('Ошибка при загрузке данных');
             } finally {
                 setLoading(false);
             }
