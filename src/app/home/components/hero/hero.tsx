@@ -21,7 +21,7 @@ export const Hero = () => {
         const fetchHeroData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('http://localhost:8000/api/homepage/hero/');
+                const response = await axios.get('https://glebandio-o2-back-v2-7fdf.twc1.net/api/homepage/hero/');
                 if (response.data && response.data.length > 0) {
                     setHeroData(response.data[0]); // Use the first item
                 } else {

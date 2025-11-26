@@ -22,7 +22,7 @@ export default function Registry() {
         setLoading(true);
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/registration/signup/", {
+            const res = await fetch("https://glebandio-o2-back-v2-7fdf.twc1.net/api/registration/signup/", {
                 method: "POST",
                 headers: {
                     "accept": "application/json",
@@ -46,7 +46,7 @@ export default function Registry() {
             if (data.token) {
                 localStorage.setItem("email", email)
                 localStorage.setItem("token", data.token);   // сохраняем токен
-                router.push("/profile");                     // редирект
+                router.push("/regestry_mailing");                     // редирект
             } else {
                 alert("Токен не получен");
             }

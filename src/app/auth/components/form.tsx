@@ -21,6 +21,8 @@ export const Form = () => {
         }));
     };
 
+
+
     const handleSubmit = async () => {
         // Проверка заполненности всех полей
         if (!formData.username.trim() || !formData.password.trim()) {
@@ -31,7 +33,7 @@ export const Form = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/accounts/login/', {
+            const response = await fetch('https://glebandio-o2-back-v2-7fdf.twc1.net/api/accounts/login/', {
                 method: 'POST',
                 headers: {
                     'accept': 'application/json',

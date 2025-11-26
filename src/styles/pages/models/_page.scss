@@ -1,6 +1,6 @@
 .models_main{
   display: flex;
-  justify-content: normal;
+  justify-content: center;
   padding-top: rem(96);
   align-items: start;
   padding-left: rem(20);
@@ -131,7 +131,7 @@
       flex-wrap: wrap;
       gap: rem(22);
       padding-top: rem(22);
-      width: 100%;
+      width: rem(1120);
     }
 
 

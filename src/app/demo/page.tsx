@@ -9,6 +9,13 @@ export default function DemoPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSuccessModal, setIsSuccessModal] = useState(false);
 
+    const getToken = (): string | null => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('token');
+        }
+        return null;
+    };
+
     const [publicKey, setPublicKey] = useState("");
     const [secretKey, setSecretKey] = useState("");
     const [exchange, setExchange] = useState("bybit");
@@ -34,11 +41,13 @@ export default function DemoPage() {
         };
 
         try {
-            const res = await fetch("http://127.0.0.1:8000/api/accounts/users/", {
+            const res = await fetch("https://glebandio-o2-back-v2-7fdf.twc1.net/api/accounts/users/", {
                 method: "POST",
                 headers: {
                     "accept": "application/json",
                     "Content-Type": "application/json",
+                    "Authorization": `Token ${getToken()}`,
+                    'X-CSRFTOKEN': '3YG9q4jILKO95q0HwgrsBChJjnrtt5lCcU4Tz6kflAfn3IoeI7fMfSUqLsgwQuek'
                 },
                 body: JSON.stringify(body),
             });
