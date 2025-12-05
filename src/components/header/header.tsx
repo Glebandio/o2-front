@@ -33,7 +33,9 @@ export const Header = () => {
                 </ul>
                 <div className="header__buttons">
                     <ButtonWhiteOutlined text={'Зарегестрироваться'}/>
+                    <Link href="/auth">
                     <ButtonBlue text={"Войти"} />
+                    </Link>
                 </div>
             </div>
         </header>
