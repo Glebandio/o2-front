@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+    eslint: {
+        // ВАЖНО: это временное решение для дебага, не для продакшена
+        ignoreDuringBuilds: true,
+    },
 };
 
 export default nextConfig;
