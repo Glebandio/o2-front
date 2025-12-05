@@ -1,6 +1,8 @@
 'use client'
 
 
+import Image from "next/image";
+
 export const Profile = () => {
 
     return(
@@ -116,7 +118,7 @@ export const Profile = () => {
                             <p className="service_payment_data_payment_details">
                                 × e3b0f7b2a1a98c5dF9E7d84e0F9cE23D8b1A9f2
                             </p>
-                            <img src="../../static/img/Copy.png" alt=""/>
+                            <Image width={10} height={5} src="/images/Copy.png" alt=""/>
                         </div>
                         <p className="service_payment_data_status_not_paid">
                             Не оплачен
@@ -133,7 +135,7 @@ export const Profile = () => {
                             <p className="service_payment_data_payment_details">
                                 × e3b0f7b2a1a98c5dF9E7d84e0F9cE23D8b1A9f2
                             </p>
-                            <img src="../../static/img/Copy.png" alt=""/>
+                            <Image width={10} height={5} src="/images/Copy.png" alt=""/>
                         </div>
                         <p className="service_payment_data_status_paid">
                             Оплачен

@@ -17,7 +17,7 @@ export interface Session {
     end_time?: string;
     status?: 'active' | 'completed' | 'paused';
     description?: string;
-    [key: string]: any;  // для дополнительных полей
+    [key: string]: unknown;  // для дополнительных полей
 }
 
 // Основной интерфейс пользователя
@@ -53,7 +53,7 @@ export interface UserData {
     is_superuser?: boolean;
 
     // Дополнительные поля
-    [key: string]: any;
+    [key: string]: unknown;
 }
 
 // Интерфейс для ответа от API при логине
