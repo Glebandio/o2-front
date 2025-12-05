@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 interface ButtonBLueProps{
     text: string,
@@ -6,9 +7,9 @@ interface ButtonBLueProps{
 export const ButtonBlue = (props: ButtonBLueProps) => {
     return(
 
-        <button className="button_blue" >
+        <Link href={'/auth'} className="button_blue" >
                 {props.text}
-        </button>
+        </Link>
 
     )
 }
