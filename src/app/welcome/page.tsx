@@ -1,12 +1,13 @@
 import {HeaderLk} from "@/components/header/headerLk";
 import Image from "next/image";
 import Link from "next/link";
+import {HeaderAuth} from "@/components/header/headerAuth";
 
 
 export default function WelcomePage() {
     return (
         <>
-            <HeaderLk/>
+            <HeaderAuth/>
             <main className="welcome">
                 <div className="container_welcome">
                     <h1>Добро пожаловать на O2 Traiding</h1>
@@ -45,7 +46,7 @@ export default function WelcomePage() {
                                     на демо-счёте</p>
                                 <p className="box_subtitle_2">Баланс демо-счёта 100 USDT, можно подключить к модели, но
                                     нельзя вывести</p>
-                                <Link href={'/demo'} className="add_demo">
+                                <Link href={'/account'} className="add_demo">
                                     Подключить демо-счёт
 
                                 </Link>

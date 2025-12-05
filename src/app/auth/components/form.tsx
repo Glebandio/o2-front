@@ -3,6 +3,7 @@ import Image from "next/image";
 import {useState} from "react";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
+import {LOGIN} from "@/api/urls";
 
 export const Form = () => {
     const [formData, setFormData] = useState({
@@ -33,7 +34,7 @@ export const Form = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('https://glebandio-o2-back-v2-7fdf.twc1.net/api/accounts/login/', {
+            const response = await fetch(`${LOGIN}`, {
                 method: 'POST',
                 headers: {
                     'accept': 'application/json',
@@ -50,15 +51,14 @@ export const Form = () => {
             const data = await response.json();
             console.log("Успешный вход:", data);
 
-            // Сохраняем токен если он есть в ответе
             if (data.token) {
                 localStorage.setItem("email", formData.username);
                 localStorage.setItem('token', data.token);
+                localStorage.setItem('id', data.user_id);
 
-                router.push('/profile');
+                router.push('/account');
             }
 
-            // Здесь можно добавить редирект или другие действия после успешного входа
 
         } catch (error) {
             console.error("Ошибка при входе:", error);

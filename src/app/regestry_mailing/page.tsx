@@ -1,11 +1,12 @@
 import {HeaderLk} from "@/components/header/headerLk";
 import Link from "next/link";
+import {HeaderAuth} from "@/components/header/headerAuth";
 
 
 export default function RegestryMailingPage() {
     return (
         <>
-            <HeaderLk/>
+            <HeaderAuth/>
             <main className="mail">
                 <div className="container_mail">
                     <p className="mail_title">Регистрация</p>

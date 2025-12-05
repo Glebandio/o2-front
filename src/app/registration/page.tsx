@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { HeaderLk } from "@/components/header/headerLk";
 import Image from "next/image";
+import Link from "next/link";
+import {HeaderAuth} from "@/components/header/headerAuth";
+import {REGISTRATION} from "@/api/urls";
 
 export default function Registry() {
     const router = useRouter();
@@ -22,7 +24,7 @@ export default function Registry() {
         setLoading(true);
 
         try {
-            const res = await fetch("https://glebandio-o2-back-v2-7fdf.twc1.net/api/registration/signup/", {
+            const res = await fetch(`${REGISTRATION}`, {
                 method: "POST",
                 headers: {
                     "accept": "application/json",
@@ -42,11 +44,10 @@ export default function Registry() {
                 return;
             }
 
-            // Например, токен приходит как data.token
             if (data.token) {
                 localStorage.setItem("email", email)
-                localStorage.setItem("token", data.token);   // сохраняем токен
-                router.push("/regestry_mailing");                     // редирект
+                localStorage.setItem("token", data.token);
+                router.push("/regestry_mailing");
             } else {
                 alert("Токен не получен");
             }
@@ -61,7 +62,7 @@ export default function Registry() {
 
     return (
         <>
-            <HeaderLk/>
+            <HeaderAuth/>
             <main className="registration">
                 <div className="container_registration">
                     <p>Регистрация</p>
@@ -105,7 +106,7 @@ export default function Registry() {
                     </div>
 
                     <div className="link_div">
-                        <a href="/login">Уже есть аккаунт</a>
+                        <Link href="/auth">Уже есть аккаунт</Link>
                     </div>
 
                     <button

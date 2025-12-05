@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import {IMenuProps} from "@/interfaces/menu";
 
 
 
-export const HeaderLk = () =>{
+export const HeaderLk = ({page, setPage}: IMenuProps) =>{
     return (
         <header className={'header-auth'}>
             <div className="container">
@@ -26,7 +27,7 @@ export const HeaderLk = () =>{
                                 stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             <circle cx="38" cy="7.00244" r="7" fill="#C80000"/>
                         </svg>
-                        <Link href={'/profile'}>
+                        <button onClick={() => setPage(3)}>
                         <svg width="45" height="42" viewBox="0 0 45 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="-0.00488281" width="42.0049" height="42.0049" rx="21.0024" fill="#D9E5FF"/>
                             <path
@@ -34,7 +35,7 @@ export const HeaderLk = () =>{
                                 fill="#0F1015"/>
                             <circle cx="38" cy="7" r="7" fill="#C80000"/>
                         </svg>
-                        </Link>
+                        </button>
                     </div>
                 </div>
             </div>

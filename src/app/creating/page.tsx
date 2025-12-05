@@ -1,10 +1,10 @@
-import {HeaderLk} from "@/components/header/headerLk";
+import {HeaderAuth} from "@/components/header/headerAuth";
 
 
 export default function CreatingPage() {
     return (
         <>
-            <HeaderLk/>
+            <HeaderAuth/>
             <main className="account">
                 <div className="container_account">
                     <p className="account_title">Создаём аккаунт</p>

@@ -1,10 +1,10 @@
-import {HeaderLk} from "@/components/header/headerLk";
+import {HeaderAuth} from "@/components/header/headerAuth";
 
 
 export default function TwofaPage() {
     return (
         <>
-            <HeaderLk/>
+            <HeaderAuth/>
             <main className="fa">
                 <div className="container_fa">
                     <p className="title">Вход</p>

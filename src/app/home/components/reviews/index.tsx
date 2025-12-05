@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {ReviewsCard} from "@/styles/components/ReviewsCard";
+import {ReviewsCard} from "@/components/ReviewsCard";
 
 
 export const Reviews = () => {
