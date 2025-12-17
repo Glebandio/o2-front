@@ -3,45 +3,35 @@ FROM node:18-alpine AS builder
 
 WORKDIR /app
 
-# Копируем package.json и package-lock.json для кэширования слоев
-COPY package.json package-lock.json* ./
+# Устанавливаем yarn
+RUN npm install -g yarn
+
+# Копируем package.json и yarn.lock
+COPY package.json yarn.lock ./
 
 # Установка зависимостей
-RUN npm ci --only=production
+RUN yarn install --frozen-lockfile
 
 # Копируем остальное код
 COPY . .
 
-# Собираем приложение в режиме production
-RUN npm run build
+# Собираем приложение
+RUN yarn build
 
 # --- СТАДИЯ ЗАПУСКА (Production Stage) ---
-FROM node:18-alpine AS runner
+FROM node:18-alpine
 
 WORKDIR /app
 
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
-# Создаем непривилегированного пользователя
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
-
-# Копируем только необходимые файлы
-COPY --from=builder /app/public ./public
+# Копируем собранные файлы
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/public ./public
 
-# Автоматически использовать standalone режим если он настроен
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-# Переключаемся на непривилегированного пользователя
-USER nextjs
-
-# Указываем порт
 EXPOSE 3000
 
-ENV PORT 3000
-ENV HOSTNAME "0.0.0.0"
-
-# Команда для запуска приложения
-CMD ["node", "server.js"]
+# Команда для запуска (используем npx чтобы не зависеть от yarn/npm)
+CMD ["npx", "next", "start"]
