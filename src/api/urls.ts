@@ -1,6 +1,6 @@
 
-const BASE_URL = `https://glebandio-o2-back-v2-7fdf.twc1.net`;
-// const BASE_URL = 'http://localhost:8000';
+// const BASE_URL = `https://glebandio-o2-back-v2-7fdf.twc1.net`;
+const BASE_URL = 'http://localhost:8000';
 
 const BASE_API=`${BASE_URL}/api`;
 
@@ -8,7 +8,8 @@ export const LOGIN = `${BASE_API}/accounts/login/`;
 
 export const REGISTRATION = `${BASE_API}/registration/signup/`;
 
-
+//==========   HOME  ==========//
+export const HOME_HERO = `${BASE_API}/homepage/hero/`;
 
  //========== MODELS ==========//
 export const MODEL_SCORES = `${BASE_API}/analytics/model-scores/`;

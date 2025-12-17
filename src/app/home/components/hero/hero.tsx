@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { ButtonPrimary } from "@/components/Buttons/ButtonPrimary";
 import Image from 'next/image';
 import axios from 'axios';
+import {HOME_HERO} from "@/api/urls";
 
 
 interface Props {
@@ -21,7 +22,7 @@ export const Hero = () => {
         const fetchHeroData = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get('https://glebandio-o2-back-v2-7fdf.twc1.net/api/homepage/hero/');
+                const response = await axios.get(`${HOME_HERO}`);
                 if (response.data && response.data.length > 0) {
                     setHeroData(response.data[0]); // Use the first item
                 } else {

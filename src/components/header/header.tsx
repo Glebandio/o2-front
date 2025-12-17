@@ -32,7 +32,7 @@ export const Header = () => {
                     </li>
                 </ul>
                 <div className="header__buttons">
-                    <ButtonWhiteOutlined text={'Зарегестрироваться'}/>
+                    <ButtonWhiteOutlined text={'Зарегистрироваться'}/>
                     <ButtonBlue text={"Войти"} />
                 </div>
             </div>
