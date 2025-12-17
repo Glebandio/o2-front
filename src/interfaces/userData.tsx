@@ -17,6 +17,18 @@ export interface Session {
     end_time?: string;
     status?: 'active' | 'completed' | 'paused';
     description?: string;
+
+    // Добавьте эти поля
+    profit?: number;
+    transactions?: number;
+    win_rate?: number;
+    unit_percent?: number;
+    model?: string;
+    exchange?: string;
+    max_transactions?: number;
+    created_at?: string;
+    updated_at?: string;
+
     [key: string]: unknown;  // для дополнительных полей
 }
 

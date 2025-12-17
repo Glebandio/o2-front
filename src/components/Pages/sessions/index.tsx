@@ -85,7 +85,8 @@ export const Sessions = () => {
     };
 
     const calculateTotalProfit = () => {
-        return activeSessions.reduce((sum, session) => sum + (session.profit || 0), 0).toFixed(2);
+        // @ts-ignore
+        return activeSessions.reduce((sum:number, session:number) => sum + (session.profit || 0), 0).toFixed(2);
     };
 
     const calculateAvgWeeklyProfit = () => {
