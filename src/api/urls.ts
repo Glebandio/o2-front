@@ -1,6 +1,7 @@
 
 // const BASE_URL = `https://glebandio-o2-back-v2-7fdf.twc1.net`;
-const BASE_URL = 'http://localhost:8000';
+// const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'https://back.o2-trading.com';
 
 const BASE_API=`${BASE_URL}/api`;
 
