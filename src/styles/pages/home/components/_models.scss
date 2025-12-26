@@ -28,7 +28,7 @@
 
     h2{
       text-align: center;
-      font-family: $base-ff;
+      font-family: $second-ff;
       font-size: rem(44);
       font-style: normal;
       font-weight: 400;
@@ -50,7 +50,7 @@
     width: 100%;
     z-index: 150;
     height: rem(350);
-    background: linear-gradient(180deg, rgba(0, 77, 255, 0.00) 0%, #004DFF 100%);
+    background: linear-gradient(180deg, rgba(0, 77, 255, 0.00) 0%, #004DFF 62%);
   }
 
   &__card{

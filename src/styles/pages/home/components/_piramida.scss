@@ -1,0 +1,134 @@
+
+.piramida{
+  padding-top: rem(142);
+  padding-left: rem(240);
+  display: flex;
+  flex-direction: column;
+  gap: rem(80);
+  position: relative;
+
+  img {
+    position: absolute;
+    top: rem(197);
+    right: rem(144);
+    width: rem(768);
+    height: rem(768);
+    z-index: 9;
+  }
+
+  h2{
+    color: $black;
+    width: rem(928);
+    font-family: $second-ff;
+    font-size: rem(44);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+  }
+
+  &_text{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: rem(22);
+
+    .box_blue{
+      width: rem(928);
+      height: rem(211);
+      border-radius: rem(16);
+      background: linear-gradient(-86deg, #004DFF 21.33%, #A3BFFF 149.74%);
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      padding: rem(52) rem(44) rem(0);
+      gap: rem(72);
+
+      &-left{
+        display: flex;
+        min-width: rem(332);
+        flex-direction: column;
+        gap: rem(27);
+
+        p{
+          color: $white;
+          font-family: $third-ff;
+          font-size: rem(24);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 100%;
+        }
+
+        span{
+          color: $white;
+          font-family: $second-ff;
+          font-size: rem(44);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 100%;
+        }
+      }
+
+      &-right{
+        width: rem(447);
+        color: var(--White, #FFF);
+        font-family: $third-ff;
+        font-size: rem(20);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+      }
+    }
+
+    .box_white{
+      width: rem(928);
+      height: rem(211);
+      border-radius: rem(16);
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      padding: rem(52) rem(44) rem(0);
+
+      &-left{
+        display: flex;
+        min-width: rem(382);
+        flex-direction: column;
+        gap: rem(27);
+
+        p{
+          color: $black;
+          font-family: $third-ff;
+          font-size: rem(24);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 100%;
+        }
+
+        span{
+          color: $black;
+          font-family: $second-ff;
+          font-size: rem(44);
+          font-style: normal;
+          font-weight: 400;
+          line-height: 100%;
+        }
+      }
+
+      &-right{
+        width: rem(431);
+        color: $black;
+        font-family: $third-ff;
+        font-size: rem(20);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%;
+      }
+    }
+
+    &-last{
+      width: rem(824);
+    }
+  }
+}

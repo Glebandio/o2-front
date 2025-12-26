@@ -84,6 +84,11 @@
         display: flex;
         align-items: center;
         gap: rem(6);
+
+        svg{
+          width: rem(24);
+          height: rem(24);
+        }
       }
 
       input{
@@ -212,5 +217,105 @@
       justify-content: space-between;
       align-items: center;
     }
+  }
+
+  /* calculator.css */
+
+  .calculator__select-cont {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .calculator__select-picked {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calculator__select-label {
+    font-size: rem(14);
+    color: #fff;
+    margin-bottom: rem(4);
+  }
+
+  .calculator__selected-value {
+    font-size: rem(16);
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+  }
+
+  .calculator__select-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: $blue;
+    border-radius: rem(8);
+    box-shadow: 0 rem(4) rem(12) rgba(0, 0, 0, 0.1);
+    max-height: rem(300);
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: rem(4);
+  }
+
+  .calculator__select-option {
+    padding: rem(12) rem(16);
+    //border-bottom: rem(1) solid #f0f0f0;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .calculator__select-option:hover {
+    background-color: #f8f9fa;
+    color: #000;
+  }
+
+  .calculator__select-option--active {
+    background-color: #5789FF;
+  }
+
+  .calculator__select-option:last-child {
+    border-bottom: none;
+  }
+
+  .calculator__option-name {
+    display: block;
+    font-weight: 500;
+    margin-bottom: rem(4);
+    font-size: rem(14);
+  }
+
+  .calculator__option-stats {
+    display: flex;
+    gap: rem(12);
+    font-size: rem(12);
+    color: #fff;
+  }
+
+  .calculator__option-stat {
+    display: inline-block;
+  }
+
+  /* Стили для скроллбара */
+  .calculator__select-dropdown::-webkit-scrollbar {
+    width: rem(6);
+  }
+
+  .calculator__select-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: rem(3);
+  }
+
+  .calculator__select-dropdown::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: rem(3);
+  }
+
+  .calculator__select-dropdown::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }

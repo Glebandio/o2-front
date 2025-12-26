@@ -2,8 +2,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { TRADES_STATS_DAILY } from "@/api/urls";
-import { ModelsProps } from "@/interfaces/models";
+import {MODEL_SCORES, TRADES_STATS, TRADES_STATS_DAILY} from "@/api/urls";
+import {ModelsProps, TradeStat} from "@/interfaces/models";
+import { useRouter } from "next/navigation";
 
 // Типы для API ключей
 interface ApiKey {
@@ -36,21 +37,19 @@ interface SessionData {
         time_unit: 'minutes' | 'hours' | 'days' | null;
         unlimited: boolean;
     };
-    // Добавляем поле с датой создания
     created_at: string;
-    start_time?: string; // Можно добавить и время начала
+    start_time?: string;
 }
 
 export const Models = () => {
-    const [models, setModels] = useState<ModelsProps[]>([]);
+    const [models, setModels] = useState<TradeStat[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const router = useRouter();
 
-    // Состояния для модалки
     const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
-    const [selectedModel, setSelectedModel] = useState<ModelsProps | null>(null);
+    const [selectedModel, setSelectedModel] = useState<TradeStat | null>(null);
 
-    // Данные для подключения сессии
     const [availableKeys, setAvailableKeys] = useState<ApiKey[]>([]);
     const [selectedKeyId, setSelectedKeyId] = useState<number | null>(null);
     const [tradeVolume, setTradeVolume] = useState<string>("");
@@ -65,7 +64,7 @@ export const Models = () => {
         const fetchModels = async () => {
             try {
                 setLoading(true);
-                const response = await axios.get(`${TRADES_STATS_DAILY}`);
+                const response = await axios.get(`${TRADES_STATS}`);
                 setModels(response.data);
                 setError(null);
             } catch (err) {
@@ -84,6 +83,18 @@ export const Models = () => {
             return localStorage.getItem('token');
         }
         return null;
+    };
+
+    const handleMoreDetailsClick = (model: TradeStat) => {
+        const modelName = model.new_model_name || `model-${model.id}`;
+        const slug = modelName
+            .replace(/\s+/g, '-') // Заменяем пробелы на дефисы
+            .replace(/\-\-+/g, '-') // Заменяем множественные дефисы на один
+            .replace(/^-+/, '') // Удаляем дефисы в начале
+            .replace(/-+$/, ''); // Удаляем дефисы в конце
+
+        // Переходим на страницу деталей модели
+        router.push(`/account/${slug}`);
     };
 
     const getId = (): string | null => {
@@ -129,17 +140,15 @@ export const Models = () => {
         }
     };
 
-    // Функция для получения текущей даты в формате ISO
     const getCurrentDateISO = (): string => {
         return new Date().toISOString();
     };
 
-    // Функция для получения текущей даты в локальном формате
     const getCurrentDateLocal = (): string => {
         return new Date().toLocaleString('ru-RU');
     };
 
-    const handleConnectClick = async (model: ModelsProps): Promise<void> => {
+    const handleConnectClick = async (model: TradeStat): Promise<void> => {
         setSelectedModel(model);
         await fetchUserKeys();
         setIsConnectModalOpen(true);
@@ -190,7 +199,7 @@ export const Models = () => {
 
         console.log('Отправляемые данные сессии:', {
             ...sessionData,
-            created_at_local: localDate // Логируем локальную дату для отладки
+            created_at_local: localDate
         });
 
         try {
@@ -272,17 +281,15 @@ export const Models = () => {
                 </p>
                 <div className="container_models_div">
                     {models.map((model, index) => {
-                        const profitablePercent = model.cnt_profitable_trades && model.cnt_trades
-                            ? (model.cnt_profitable_trades / model.cnt_trades) * 100
-                            : 0;
+                        const profitablePercent = model.profitable_trades_pct
 
                         return (
-                            <div className="container_models" key={model.id || model.new_model_name || index}>
+                            <div className="container_models" key={model.new_model_name || index}>
                                 <div className="container_models_card">
                                     <div className="container_models_top">
                                         <p className="container_models_top_title">Модель</p>
                                         <p className="container_models_top_name">
-                                            {model.new_model_name || `Модель ${model.id || ''}`}
+                                            {model.new_model_name}
                                         </p>
                                     </div>
                                     <div className="container_models_bottom">
@@ -296,34 +303,34 @@ export const Models = () => {
                                             <div className="percent_div_right_part">
                                                 <p className="percent_right_part_title">Умность</p>
                                                 <p className="percent_right_part_profit">
-                                                    {model.smartness_day_pct ? model.smartness_day_pct.toFixed(1) : 0}%
+                                                    {model.smartness_pct}%
                                                 </p>
                                             </div>
                                         </div>
                                         <Image width={300} height={300} className="chart" src="/images/chart.png" alt="График"/>
                                         <div className="data_chart_div">
                                             <div className="data_chart_element">
-                                                <p className="data_chart_name">Всего сделок</p>
+                                                <p className="data_chart_name">PnL на сделку (ед. %)</p>
                                                 <p className="data_chart">
-                                                    {model.cnt_trades || 0}
+                                                    {model.pnl_per_trade_pct}
                                                 </p>
                                             </div>
                                             <div className="data_chart_element">
-                                                <p className="data_chart_name">Прибыльные</p>
+                                                <p className="data_chart_name">Время в сделке</p>
                                                 <p className="data_chart">
-                                                    {model.cnt_profitable_trades || 0}
+                                                    {model.time_in_trade_text}
                                                 </p>
                                             </div>
                                             <div className="data_chart_element">
-                                                <p className="data_chart_name">Убыточные</p>
+                                                <p className="data_chart_name">PnL в день (в ед.%)</p>
                                                 <p className="data_chart">
-                                                    {model.cnt_loss_trades || 0}
+                                                    {model.pnl_per_day_pct}
                                                 </p>
                                             </div>
                                             <div className="data_chart_element_not_border">
-                                                <p className="data_chart_name_not_border">Прибыль за день</p>
+                                                <p className="data_chart_name_not_border">Дней с просадкой </p>
                                                 <p className="data_chart_not_border">
-                                                    {model.profit_day ? model.profit_day.toFixed(2) : 0}
+                                                    {model.drawdown_days_pct.toFixed(0)}
                                                 </p>
                                             </div>
                                         </div>
@@ -334,7 +341,9 @@ export const Models = () => {
                                             >
                                                 Подключить
                                             </button>
-                                            <button className="models_button_more">
+                                            <button className="models_button_more"
+                                                    onClick={() => handleMoreDetailsClick(model)}
+                                            >
                                                 Подробнее
                                             </button>
                                         </div>

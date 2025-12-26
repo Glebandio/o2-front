@@ -1,16 +1,16 @@
 
-
-
-.advantages {
+.three {
   width: 100%;
-  padding-top: rem(138);
+  height: max-content;
+  display: flex;
+  justify-content: end;
   position: relative;
-
+  padding-top:rem(187);
 
   &_text{
     position: relative;
     z-index: 10;
-    border-radius: 0 rem(16) rem(16) 0;
+    border-radius: rem(16) 0 0 rem(16);
     background: linear-gradient(44deg, rgba(0, 77, 255, 0.80) 42.7%, rgba(180, 202, 255, 0.80) 136.95%);
     width: rem(828);
     height: rem(853);
@@ -65,10 +65,10 @@
   &_image{
     z-index: 1;
     position: absolute;
-    top: rem(261);
-    right: rem(213);
-    width: rem(1064);
-    height: rem(608);
+    top: rem(184);
+    left: rem(142);
+    width: rem(904);
+    height: rem(904);
   }
 
   img{
@@ -76,8 +76,3 @@
     height: 100%;
   }
 }
-
-
-
-
-

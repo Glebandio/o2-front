@@ -12,6 +12,8 @@ export const Reviews = () => {
                 <ReviewsCard/>
                 <ReviewsCard/>
                 <ReviewsCard/>
+                <ReviewsCard/>
+                <ReviewsCard/>
             </div>
             <div className="reviews__blur">
             </div>

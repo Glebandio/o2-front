@@ -30,10 +30,9 @@ export default function Home() {
         <Reviews/>
         <Calculator/>
         <Advantages/>
-        <Demo/>
         <Piramida/>
         <Three/>
-        <Table/>
+        {/*<Table/>*/}
         <Message/>
         <FAQ/>
         <Phone/>

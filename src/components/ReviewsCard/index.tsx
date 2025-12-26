@@ -8,8 +8,24 @@ export const ReviewsCard = () => {
                 <div className="reviews__card-model">
                     <p>Модель</p>
                     <div className={'reviews__card-name'}>
-                        1446_00VIT_MT_9_v<br/>olsic1filter_BYBIT
+                        1446_00VIT_MT_9_volsic1filter_BYBIT
                     </div>
+                </div>
+            </div>
+            <div className="reviews__card-man">
+                <div className="reviews__card-manInfo">
+                    <Image width={65} height={65} src={'/images/reviews/person.png'} alt={''}/>
+                    <div className="reviews__card-about">
+                        <div className="reviews__card-manName">
+                            Aleksandr
+                        </div>
+                        <div className="reviews__card-start">
+                            Инвестирует с 05.24
+                        </div>
+                    </div>
+                </div>
+                <div className="reviews__card-desc">
+                    «Каждый из нас понимает очевидную вещь: экономическая повестка сегодняшнего дня позволяет оценить значение новых принципов формирования материально-технической и кадровой базы.»
                 </div>
                 <div className="reviews__card-results">
                     <div className="reviews__card-point">
@@ -44,22 +60,6 @@ export const ReviewsCard = () => {
                             12 мес
                         </div>
                     </div>
-                </div>
-            </div>
-            <div className="reviews__card-man">
-                <div className="reviews__card-manInfo">
-                    <Image width={90} height={90} src={'/images/reviews/person.png'} alt={''}/>
-                    <div className="reviews__card-about">
-                        <div className="reviews__card-manName">
-                            Игорь<br/>Васильев
-                        </div>
-                        <div className="reviews__card-start">
-                            Инвестирует с 05.24
-                        </div>
-                    </div>
-                </div>
-                <div className="reviews__card-desc">
-                    «Каждый из нас понимает очевидную вещь: экономическая повестка сегодняшнего дня позволяет оценить значение новых принципов формирования материально-технической и кадровой базы.»
                 </div>
             </div>
         </div>

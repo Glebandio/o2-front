@@ -6,7 +6,7 @@ export const Models = () => {
         <section className={'models'}>
             <div className="models__blur"></div>
             <div className="models__column">
-                <h2>Мы выбрали для Вас 3 самые <br/> лучшие алгоритмические модели</h2>
+                <h2>Прозрачная и подробная статистика <br/> по каждой модели </h2>
                 <div className="models__row">
                     <div className="models__card">
                         <Image width={358} height={541} src={'/images/models/model.png'} alt={''}/>
